@@ -1,0 +1,66 @@
+.select_container {
+  position: relative;
+  width: 400px;
+}
+
+.selected_text {
+  width: 100%;
+  border: 1px solid $text;
+  border-radius: 6px;
+  padding: 11px;
+  color: $text;
+  outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: all 0.1s ease-in;
+  cursor: pointer;
+}
+
+.select_arrow {
+  transform: rotate(90deg);
+  transition: all 0.35s cubic-bezier(0.4, -0.9, 0.7, 1.8);
+}
+
+.select_arrow.active {
+  transform: rotate(-90deg);
+}
+
+.select_options {
+  border-radius: 6px;
+  overflow: hidden;
+  position: absolute;
+  width: 100%;
+  margin-top: 4px;
+  z-index: 2;
+  max-height: 220px;
+  overflow-y: auto;
+  box-shadow: 0 0 10px rgba($background, 0.3);
+  background-color: rgba($background, 0.14);
+  backdrop-filter: blur(10px);
+
+  &::-webkit-scrollbar {
+    width: 4px;
+    display: block;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #ec489925;
+  }
+
+  .select_option {
+    list-style-type: none;
+    padding: 12px;
+    border-bottom: 1px solid $text;
+    cursor: pointer;
+    transition: all 0.1s ease-in;
+  }
+
+  .select_option:last-child {
+    border-bottom: none;
+  }
+}

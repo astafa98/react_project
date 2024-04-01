@@ -1,0 +1,21 @@
+.wrapper {
+  width: 100vw;
+  height: 100vh;
+  background: $background;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  color: $text;
+  font-family: $Nunito;
+  font-size: 20px;
+}
+
+.errorCode {
+  font-size: 40px;
+}
+
+.link {
+  color: $text;
+}

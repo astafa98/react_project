@@ -1,0 +1,42 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  font-family: $Nunito;
+  font-size: $textBase;
+  width: 100%;
+
+  .label {
+    color: $text;
+    font-weight: 500;
+    text-align: left;
+    margin-bottom: 0.5em;
+    font-size: 1em;
+  }
+
+  .input {
+    font-size: 1em;
+    color: $background;
+    background-color: $text;
+    padding: 0.5em 0.75em;
+    border: 1px solid $accent;
+    border-radius: 6px;
+    box-shadow: 0px 0px 10px 5px $accent;
+
+    &_error {
+      border-color: $error;
+      box-shadow: none;
+    }
+
+    &::placeholder {
+      color: $textSecondary;
+    }
+  }
+
+  .error {
+    color: $error;
+    font-size: 0.875em;
+    font-weight: 300;
+    text-align: left;
+    margin-top: 0.5em;
+  }
+}

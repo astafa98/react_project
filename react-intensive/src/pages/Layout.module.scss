@@ -1,0 +1,49 @@
+.container {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.main {
+  width: 100%;
+}
+
+.main::before {
+  background: conic-gradient(
+    from 180deg at 50% 50%,
+    #ec489919 0deg,
+    rgba(236, 72, 153, 0.208) 55deg,
+    #ec489915 120deg,
+    #ec489940 160deg,
+    transparent 360deg
+  );
+  width: 360px;
+  height: 240px;
+  z-index: -1;
+  content: '';
+  left: 10%;
+  top: 30%;
+  position: fixed;
+  filter: blur(45px);
+  transform: translateZ(0);
+}
+
+.main::after {
+  background: conic-gradient(
+    from 90deg at 50% 50%,
+    #f8fafb13 0deg,
+    #f8fafb24 55deg,
+    #f8fafb19 120deg,
+    #f8fafb28 160deg,
+    transparent 360deg
+  );
+  width: 330px;
+  height: 260px;
+  z-index: -1;
+  content: '';
+  left: 60%;
+  top: 60%;
+  position: fixed;
+  filter: blur(45px);
+  transform: translateZ(0);
+}

@@ -1,0 +1,273 @@
+.header {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  padding: 40px 0;
+}
+
+.nav {
+  justify-self: center;
+}
+
+.user_block {
+  justify-self: end;
+}
+
+.logo {
+  font-family: $Battambang;
+  text-transform: uppercase;
+  font-size: 25px;
+  font-weight: 700;
+  line-height: 1;
+  color: $text;
+  position: relative;
+
+  .bold {
+    display: flex;
+  }
+
+  .thin {
+    text-align-last: left;
+    font-weight: normal;
+    font-family: $Nunito;
+    font-size: 16px;
+    letter-spacing: 10px;
+  }
+}
+
+.bounce_letter {
+  animation: bounce 9s ease-in-out;
+  animation-delay: 2s;
+  transition: all 200ms ease-in-out;
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  4% {
+    transform: translateY(-7px);
+  }
+  5% {
+    transform: translateY(-6.5px);
+  }
+  6% {
+    transform: translateY(0);
+  }
+  7% {
+    transform: translateY(-4px);
+  }
+  8% {
+    transform: translateY(-3.5px);
+  }
+  9% {
+    transform: translateY(0);
+  }
+  10% {
+    transform: translateY(-1px);
+  }
+  11% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.menu_list {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  font-size: 14px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.menu_item > a {
+  text-decoration: none;
+  position: relative;
+  color: $text;
+  &:before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    margin: -5px 0;
+    background-color: white;
+    visibility: hidden;
+    transform: scaleX(0);
+    transition: all 0.2s ease-in-out 0s;
+  }
+  &:hover:before {
+    visibility: visible;
+    transform: scaleX(1);
+  }
+}
+
+// There's a bit of a mess here. I copied and pasted this from CodePen and refactored
+
+.user_block {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+  outline: none;
+}
+
+svg {
+  height: 14px;
+  width: 14px;
+}
+
+.text_truncate {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.dropdown_container {
+  margin-top: 0;
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  position: relative;
+}
+
+.dropdown_title_icon,
+.dropdown_arrow {
+  display: inline-flex;
+  transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.dropdown_arrow.active {
+  rotate: -180deg;
+}
+
+.dropdown_title {
+  text-transform: capitalize;
+}
+
+.dropdown_button,
+.main_button {
+  font-weight: 400;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 15px;
+
+  button,
+  a {
+    font-family: $Nunito;
+  }
+}
+
+.main_button svg {
+  fill: $text;
+}
+
+.dropdown_button a,
+.dropdown_button span {
+  pointer-events: none;
+  color: $textSecondary;
+}
+
+.main_button {
+  border-radius: 8px;
+  color: $text;
+  background-color: $background;
+  border: 0.1rem solid rgba($text, 0.2);
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  z-index: 1;
+}
+
+.main_button .dropdown-arrow {
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transform: rotate(0);
+  margin-left: 1.8rem;
+}
+
+.list_button {
+  transition: color 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  color: $text;
+  overflow: hidden;
+}
+
+.dropdown_list_container {
+  z-index: 0;
+  position: absolute;
+  top: 40px;
+  left: 0;
+  right: 0;
+  display: none;
+  overflow: hidden;
+}
+
+.dropdown_list_container.active {
+  display: block;
+  -webkit-animation: slide-in-top 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation: slide-in-top 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+.dropdown_list_container.hidden {
+  display: none;
+  -webkit-animation: slide-out-top 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94)
+    both;
+  animation: slide-out-top 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+.dropdown_list_wrapper {
+  background-color: $background;
+  border-radius: 8px;
+  border: 0.1rem solid var(--border-color);
+  position: relative;
+}
+
+ul.dropdown_list {
+  position: relative;
+  list-style-type: none;
+}
+
+li.dropdown_list_item {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 1;
+  opacity: 1;
+  transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+@keyframes slide-in-top {
+  0% {
+    -webkit-transform: translateY(-40px);
+    transform: translateY(-40px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-out-top {
+  0% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translateY(-40px);
+    transform: translateY(-40px);
+    opacity: 0;
+  }
+}

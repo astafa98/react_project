@@ -1,0 +1,33 @@
+.container {
+  width: 380px;
+  border: $borderBase;
+  border-radius: 16px;
+  padding: 30px 40px;
+  font-size: $textBase;
+
+  .form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .error {
+    margin-bottom: 20px;
+    color: $error;
+    display: flex;
+    align-items: flex-end;
+    font-size: 0.875em;
+
+    &::before {
+      content: '';
+      width: 20px;
+      height: 20px;
+      display: inline-block;
+      margin-right: 5px;
+      mask: url('../../assets/alert.svg') no-repeat 50% 50%;
+      mask-size: cover;
+      background-color: $error;
+    }
+  }
+}

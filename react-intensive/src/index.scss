@@ -1,0 +1,9 @@
+@import './styles/reset';
+
+body {
+  position: relative;
+  overflow-x: hidden;
+  font-family: $Nunito;
+  background: $background;
+  color: $text;
+}
